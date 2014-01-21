@@ -16,11 +16,12 @@ gem 'turbolinks' # Turbolinks makes following links in your web application fast
 
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
-group :test, :development do
-  gem 'capybara'
+gem "minitest-rails" # Adds mini-test framework
+
+group :test do
+  gem 'minitest-rails-capybara'
 end
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  gem 'sdoc', require: false # bundle exec rake doc:rails generates the API under doc/api.
 end

@@ -9,6 +9,6 @@ Portfolio::Application.load_tasks
 task default: 'test'
 
 Rake::TestTask.new do |t|
-  t.libs << "spec"
-  t.pattern = "spec/**/*_spec.rb"
+  t.libs << "test"
+  t.pattern = "test/**/*_test.rb"
 end
