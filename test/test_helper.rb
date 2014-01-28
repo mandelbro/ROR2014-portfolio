@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/rails'
+begin; require 'turn/autorun'; rescue LoadError; end
 
 # To add Capybara feature tests add `gem 'minitest-rails-capybara'`
 # to the test group in the Gemfile and uncomment the following:
@@ -16,3 +17,5 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+Turn.config.format = :pretty
