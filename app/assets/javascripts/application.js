@@ -15,6 +15,8 @@
 //= require zepto
 //= require foundation
 //= require turbolinks
+//= require fastclick
+//= require placeholder
 //= require_tree .
 // run jQuery in noConflict mode
 jQuery.noConflict();

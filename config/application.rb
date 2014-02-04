@@ -29,5 +29,10 @@ module Portfolio
     config.generators do |g|
       g.test_framework :mini_test, :spec => true
     end
+
+    # Add fonts to asset path
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    I18n.enforce_available_locales = false
   end
 end
