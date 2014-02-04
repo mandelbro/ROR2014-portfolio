@@ -35,6 +35,9 @@ group :doc do
   gem 'sdoc', require: false # bundle exec rake doc:rails generates the API under doc/api.
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
 
 ruby "2.0.0"
