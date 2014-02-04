@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require zepto
+//= require foundation
 //= require turbolinks
 //= require_tree .
+// run jQuery in noConflict mode
+jQuery.noConflict();
+// only use Zepto if it's supported
+Zepto = '__proto__' in {} ? Zepto : undefined;
+// Initialize Foundation
+(function($){
+  $(function(){ $(document).foundation(); });
+})(jQuery);
