@@ -7,3 +7,7 @@ rvm:
   - ruby-head
   - jruby-head
   - ree
+deploy:
+  provider: heroku
+  app: chrismontes # optional if it's the same as your repo name
+  api_key: "09a98fb7ca323199ea70b329410ed839ad2f2095"
