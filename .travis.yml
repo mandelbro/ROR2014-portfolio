@@ -9,7 +9,7 @@ deploy:
   on:
     repo: mandelbro/ROR2014-portfolio
 before_script:
+  - psql -c 'create database portfolio_test' -U postgres
   - "rake db:migrate"
-  - psql -c 'create database my_app_test' -U postgres
 env:
   - DB=postgresql
