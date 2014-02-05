@@ -27,7 +27,7 @@ module Portfolio
 
     # Set
     config.generators do |g|
-      g.test_framework :mini_test, :spec => true
+      g.test_framework :mini_test, :spec => false, :fixture => false, :feature => true
     end
 
     # Add fonts to asset path
