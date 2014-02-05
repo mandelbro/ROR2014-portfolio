@@ -8,7 +8,6 @@ deploy:
   app: chrismontes
   on:
     repo: mandelbro/ROR2014-portfolio
-run: "rake db:migrate"
 before_script:
   - "rake db:migrate RAILS_ENV=test"
   - psql -c 'create database my_app_test' -U postgres
