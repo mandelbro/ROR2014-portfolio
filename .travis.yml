@@ -1,11 +1,16 @@
 language: ruby
 rvm:
-  - 2.1.0
-  - 2.0.0
-  - 1.9.3
-  - 1.9.2
+- 2.0.0
 deploy:
   provider: heroku
-  app: chrismontes # optional if it's the same as your repo name
-  api_key: "09a98fb7ca323199ea70b329410ed839ad2f2095"
-  run: "rake db:migrate"
+  api_key:
+    secure: Q9Ch1k2F97jprmIO0jQvBoVyod48xmX7XlHcmW6VIUdjbDMIPj8IL/7EVxvwdN8/ki79nwDVOhY3uzCwtz0Y3dh9B3Y5PV43kg0QClWHPTgKJUktGQ6phuzwlCTXUW843nUQmIq5BRPBRw1oE3RSlhOYEGTziNXzNalUwAIaleY=
+  app: chrismontes
+  on:
+    repo: mandelbro/ROR2014-portfolio
+run: "rake db:migrate"
+before_script:
+  - "rake db:migrate RAILS_ENV=test"
+  - psql -c 'create database my_app_test' -U postgres
+env:
+  - DB=postgresql
