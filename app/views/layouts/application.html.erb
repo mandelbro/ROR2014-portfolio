@@ -18,6 +18,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -81,7 +82,5 @@
       <!-- / Footer -->
 
     </div>
-
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
