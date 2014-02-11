@@ -1,5 +1,5 @@
 teacherchannel:
-  title: TeacherChannel
+  company: TeacherChannel
   body: |
     ##Building tools for teachers
     I helped a small company transition their business into the digital age.
@@ -7,21 +7,21 @@ teacherchannel:
   lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
 
 spt:
-  title: Sony Pictures Television International
+  company: Sony Pictures Television International
   body: |
     ##Meeting the need for speed
     When the SPTI team at Smashing Ideas came to me for help improving the load times on their Nextgen platform, I proposed and implemented a number of changes that made a major impact.
   technologies: Drupal 7, jQuery & Zepto, CSS3, Lazy Resource Loading
 
 rmv:
-  title: Rice McVaney
+  company: Rice McVaney
   body: |
     ##A modern website, for a post-modern studio
     I'm honestly not even sure what that means
   technologies: Drupal 7, jQuery & Zepto, CSS3
 
 upco:
-  title: UP Global
+  company: UP Global
   body: |
     ##Building a platform for entrepreneurs worldwide
     With a new brand strategy on the horizon, we needed to build a platform that enabled their team of innovators to quickly build sites consistent with the UP Global strategy
