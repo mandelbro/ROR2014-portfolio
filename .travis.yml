@@ -11,7 +11,7 @@ deploy:
     branch: master
     rvm: 2.0.0
   run:
-    - "bundle install"
+    - "bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment"
     - "rake db:migrate"
     - restart
     - "rake cleanup"
