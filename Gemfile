@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.
 
 gem 'zurb-foundation' # Adds foundation
 
+gem 'redcarpet'
+
 group :test, :development do
 
   gem "minitest-rails" # Adds mini-test framework
