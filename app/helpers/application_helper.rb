@@ -7,6 +7,7 @@ module ApplicationHelper
 end
 
 def markdown text
-  options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis]
-  Redcarpet.new(text, *options).to_html
+  options = { hard_wrap: true, filter_html: true, autolink: true, no_intraemphasis: true }
+  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
+  raw markdown.render(text)
 end
