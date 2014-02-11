@@ -21,11 +21,7 @@ gem 'zurb-foundation' # Adds foundation
 
 gem 'redcarpet'
 
-group :test, :development do
-
-  gem "minitest-rails" # Adds mini-test framework
-
-end
+gem "minitest-rails" # Adds mini-test framework
 
 group :test do
 
