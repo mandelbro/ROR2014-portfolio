@@ -1,0 +1,26 @@
+
+<div class="work-grid">
+  <ul class="small-block-grid-2">
+    <% @projects.each do |project| %>
+    <li style="background-image: <%= project.lead_image %>">
+      <div class="project" id="<%= dom_id(project) %>">
+        <h3><%= project.company %></h3>
+        <p><%= project.technologies %></p>
+        <div class="nav">
+          <%= link_to 'Show', project %> |
+          <%= link_to 'Edit', edit_project_path(project) %> |
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<hr class="section-spacer">
+
+<div class="row">
+  <div class="columns">
+    <%= link_to 'New Project', new_project_path, class: 'button medium' %>
+  </div>
+</div>

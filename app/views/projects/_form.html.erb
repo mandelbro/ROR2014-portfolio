@@ -1,0 +1,70 @@
+
+  <%= form_for(@project) do |f| %>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :company, title: "Company" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_field :company %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :body, title: "Body" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_area :body %>
+      </div><br />
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :technologies, title: "Technologies" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_area :technologies %>
+      </div><br />
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :lead_image, title: "Lead Image" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_field :lead_image %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :other_images, title: "Other Images" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_area :other_images %>
+      </div><br />
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :quote, title: "Quote" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_area :quote %>
+      </div><br />
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :quote_attr, title: "Quote Attribute" %>
+      </div>
+      <div class="columns large-8">
+        <%= f.text_field :quote_attr %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="columns large-4">
+        <%= f.label :weight, title: "Weight" %>
+      </div>
+      <div class="columns large-2">
+        <%= f.text_field :weight, value: 0 %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Save Project", class: 'button large' %>
+    </div>
+  <% end %>
