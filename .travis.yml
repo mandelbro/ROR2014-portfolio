@@ -8,6 +8,12 @@ deploy:
   app: chrismontes
   on:
     repo: mandelbro/ROR2014-portfolio
+    branch: master
+    rvm: 2.0.0
+  run:
+    - "rake db:migrate"
+    - restart
+    - "rake cleanup"
 before_script:
   - psql -c 'create database portfolio_test' -U postgres
   - "rake db:migrate"
