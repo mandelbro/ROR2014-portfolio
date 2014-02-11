@@ -56,6 +56,18 @@
           </nav> <!-- /.top-bar -->
         </div><!-- /.row -->
       </div><!-- /.bck -->
+      <% if flash[:notice] %>
+        <div class="row">
+          <div class="columns notice">
+            <div data-alert class="alert-box success radius">
+              <%= flash[:notice] %>
+              <a href="#" class="close">&times;</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <hr class="section-spacer">
 
       <div class="main <%= (request.fullpath.parameterize.squish.size > 0 ? request.fullpath.parameterize.squish : 'home') %>">
         <%= yield %>
