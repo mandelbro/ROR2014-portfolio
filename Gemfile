@@ -23,6 +23,8 @@ gem 'redcarpet'
 
 gem "minitest-rails" # Adds mini-test framework
 
+gem 'capistrano', '~> 3.1.0' # Adds capistrano for deploying assets to asset server
+
 group :test do
 
   gem 'minitest-rails-capybara'
