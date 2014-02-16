@@ -1,0 +1,93 @@
+
+
+
+/* Thumnails */
+.tumb{
+  display: inline-block;
+  width:230px;
+  height: 190px;
+  background: #FFF;
+  border:1px solid #ccc;
+  position:relative;
+  overflow:hidden;
+  margin: auto;
+  margin-right:10px;
+  margin-bottom: 20px;
+  -moz-transition:all 0.5s ease;
+  -webkit-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+
+  img {
+    font-size:2em;
+    color:#fff;
+    position:absolute;
+    display:block;
+    bottom: -101px;
+    text-align:center;
+    width:100%;
+  }
+
+  p {
+    font-size:0.8em;
+    text-align:justify;
+    padding:0px 10px;
+  }
+
+  h4 {
+    text-align:center;
+  }
+
+  .slidertp{
+    position:absolute;
+    width: 200%;
+    height: 50%;
+    left: -100px;
+    top: 2px;
+    background:#fff;
+    overflow:hidden;
+    background:#F74646;
+    -moz-transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+    transition:all 0.5s linear;
+  }
+
+  .slidertp title {
+    bottom:-20px;
+  }
+
+  .sliderbt {
+    position:absolute;
+    width: 200%;
+    height:50%;
+    left: -100px;
+    bottom:0px;
+    background:#F74646;
+    -moz-transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+    transition:all 0.5s linear;
+    overflow:hidden;
+
+    img{
+      bottom: -9px;
+    }
+  }
+
+  &:hover{
+    -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    transition:all 0.5s ease;
+  }
+
+  &:hover .slidertp{
+    top:-50%;
+    transition:all 0.5s linear;
+    -moz-transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+  }
+  &:hover .sliderbt{
+    bottom:-50%;
+    -moz-transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+    transition:all 0.5s linear;
+  }
+}

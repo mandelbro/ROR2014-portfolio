@@ -13,7 +13,7 @@
         <%= f.label :body, title: "Body" %>
       </div>
       <div class="columns large-8">
-        <%= f.text_area :body %>
+        <%= f.text_area :body, class: "big-textarea" %>
       </div><br />
     </div>
     <div class="field row">
@@ -21,7 +21,7 @@
         <%= f.label :technologies, title: "Technologies" %>
       </div>
       <div class="columns large-8">
-        <%= f.text_area :technologies %>
+        <%= f.text_area :technologies, rows: 5 %>
       </div><br />
     </div>
     <div class="field row">
@@ -37,7 +37,7 @@
         <%= f.label :other_images, title: "Other Images" %>
       </div>
       <div class="columns large-8">
-        <%= f.text_area :other_images %>
+        <%= f.text_area :other_images, rows: 5 %>
       </div><br />
     </div>
     <div class="field row">
@@ -45,7 +45,7 @@
         <%= f.label :quote, title: "Quote" %>
       </div>
       <div class="columns large-8">
-        <%= f.text_area :quote %>
+        <%= f.text_area :quote, rows: 10 %>
       </div><br />
     </div>
     <div class="field row">

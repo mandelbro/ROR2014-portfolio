@@ -1,7 +1,7 @@
 teacherchannel:
   company: TeacherChannel
   body: |
-    ##Building tools for teachers
+    ##From Brick and Mortar, to Click and Mortar
     I helped a small company transition their business into the digital age.
   technologies: Drupal 7, JavaScript
   lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
@@ -16,14 +16,14 @@ spt:
 rmv:
   company: Rice McVaney
   body: |
-    ##A modern website, for a post-modern studio
+    ##A modern website, for a post-modern brand
     I'm honestly not even sure what that means
   technologies: Drupal 7, jQuery & Zepto, CSS3
 
 upco:
   company: UP Global
   body: |
-    ##Building a platform for entrepreneurs worldwide
+    ##Building a platform for entrepreneurs around the globe
     With a new brand strategy on the horizon, we needed to build a platform that enabled their team of innovators to quickly build sites consistent with the UP Global strategy
   technologies: Rails, LocomotiveCMS, jQuery & Zepto, foundation, CSS3, liquid
   quote: In partnership with UP Global, we'll help support 500,000 new entrepreneurs and their startups around the world
