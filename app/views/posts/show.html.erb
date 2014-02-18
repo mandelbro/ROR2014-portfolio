@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="columns">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+      <p id="author">
+        <b>By:</b>
+        <%= @post.author.email unless @post.author.nil? %>
+      </p>
+    </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+    <p>
+      <strong>Body:</strong>
+      <%= @post.body %>
+    </p>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<hr class="section-spacer">
+<div class="row">
+  <div class="columns">
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+  </div>
+</div>
