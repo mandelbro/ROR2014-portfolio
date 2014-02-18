@@ -30,7 +30,14 @@
 }
 
 .main {
-  padding: 98px 0 145px;
+  padding: 48px 0 145px;
+}
+
+.bck{
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 99;
 }
 
 
@@ -254,52 +261,6 @@ blockquote:hover {
   width: 100%;
   left: 0;
   top: 0;
-
-  .masthead {
-    background: url("<%= asset_path 'header.jpg' %>") no-repeat center center fixed;
-    padding-bottom: 1em;
-    background-size: cover;
-    position: relative;
-    font-size: 1.5em;
-
-    h1, h2, h3 {
-      color: rgba(255, 255, 255, 1);
-    }
-
-    .columns {
-      bottom: 0;
-      display: table;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
-  .bck{
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.22);
-    position: relative;
-    z-index: 99;
-  }
-  .this_is_home{
-    padding-bottom: 10em;
-  }
-  .divider {
-    color: #777;
-    text-align: center;
-  }
-  .info_box {
-    text-align: center;
-  }
-  .recentwork_box {
-    text-align: center;
-    background-color: #F7F7F7;
-  }
-  .prefooter{
-    text-align: center;
-    padding: 50px 0;
-  }
 }
 
 /* Footer */
@@ -806,8 +767,6 @@ blockquote:hover {
 }
 
 /* Spacers */
-
-
 hr.section-spacer {
   border: none;
   margin: 0 0 2.5em;
