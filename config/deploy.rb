@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'assets.chrismontes.com'
+set :application, 'chrismontes.com'
 set :repo_url, 'git@github.com:mandelbro/ROR2014-portfolio.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/var/www/assets.chrismontes.com'
+set :deploy_to, '/var/www/assets.chrismontes.com/chrismontes.com'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -32,7 +32,7 @@ set :deploy_to, '/var/www/assets.chrismontes.com'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 3
 
 namespace :deploy do
 
