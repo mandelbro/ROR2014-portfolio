@@ -23,13 +23,16 @@ gem 'redcarpet'
 
 gem "minitest-rails" # Adds mini-test framework
 
-gem 'capistrano', '~> 3.1.0' # Adds capistrano for deploying assets to asset server
-
 group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
 end
+
+# group :development do
+#   gem 'capistrano',  '~> 3.1'
+#   gem 'capistrano-rails', '~> 1.1'
+# end
 
 group :doc do
   gem 'sdoc', require: false # bundle exec rake doc:rails generates the API under doc/api.
