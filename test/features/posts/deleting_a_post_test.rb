@@ -3,6 +3,7 @@ require "test_helper"
 feature "Deleting a post" do
   scenario "post is deleted with a click" do
     # Given an existing post
+    sign_in
     visit posts_path
 
     # When the delete link is clicked
