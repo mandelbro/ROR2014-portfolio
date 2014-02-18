@@ -11,7 +11,6 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 # gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets and views
 
 gem 'jquery-rails' # Use jquery and Zepto as the JavaScript library
-gem 'zepto-for-rails'
 
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
@@ -23,12 +22,17 @@ gem 'redcarpet'
 
 gem "minitest-rails" # Adds mini-test framework
 
-gem 'capistrano', '~> 3.1.0' # Adds capistrano for deploying assets to asset server
+gem 'devise' # Adds Devise user authentication
 
 group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
+end
+
+group :development do
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
 end
 
 group :doc do
