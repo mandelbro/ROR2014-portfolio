@@ -17,9 +17,23 @@
         <ul class="right">
           <li class="active"><a href="/">Home</a></li>
           <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-          <li><a href="<%= projects_path %>">Projects</a></li>
+          <li><%= link_to "Projects", projects_path %></li>
           <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-          <li><a href="<%= posts_path %>">Posts</a></li>
+          <li><%= link_to "Posts", posts_path %></li>
+          <li><i class="icon_divider  fi-asterisk size-12"></i></li>
+          <% if current_user.nil? %>
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <li><i class="icon_divider  fi-asterisk size-12"></i></li>
+            <li>
+              <%= link_to "Sign In", new_user_session_path %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+            </li>
+          <% end %>
         </ul><!-- /.right -->
       </section><!-- /.top-bar-section -->
     </nav> <!-- /.top-bar -->
