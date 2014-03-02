@@ -9,7 +9,8 @@ feature 'As a user
     page.find('#header').click_on "Sign Up"
 
     # When I submit the login form with valid info
-    fill_in "Email", with: "root@root.com"
+    fill_in "username", with: "test_user"
+    fill_in "Email", with: "test@test.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
 
