@@ -15,12 +15,13 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
 
-  <% if current_user.role == "editor" %>
+  <% if publish? @post %>
 
     <div class="field">
       <%= f.label :published %>
