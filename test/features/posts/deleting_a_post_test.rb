@@ -5,9 +5,10 @@ feature "Deleting a post" do
     # Given an existing post
     sign_in
     visit posts_path
+    page.find(".post-list").click_on posts(:hate_git).title
 
     # When the delete link is clicked
-    page.find("tbody tr:last").click_on "Destroy"
+    page.click_on "Delete"
 
     # Then the post is deleted
     page.wont_have_content "Why I hate Git"
