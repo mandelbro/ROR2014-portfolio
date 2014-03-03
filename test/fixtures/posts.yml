@@ -1,14 +1,14 @@
 cr:
   title: Code Rails
   body: This is how I learned web development!
-  author: rewt
+  author: root
 
-love-git:
+love_git:
   title: Why I love Git!
   body: It's literally made with real magic.
-  author: rewt
+  author: root
 
-hate-git:
+hate_git:
   title: Why I hate Git!
   body: SVN is way better!
-  author: rewt
+  author: root
