@@ -25,9 +25,9 @@ end
 
 Turn.config.format = :pretty
 
-def sign_in
+def sign_in(role = :editor)
   visit new_user_session_path
-  fill_in "Email", with: "rewt@test.com"
+  fill_in "Email", with: users(role).email
   fill_in "Password", with: "password"
   page.find("form").click_on "Sign in"
 end
