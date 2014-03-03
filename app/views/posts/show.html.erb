@@ -1,26 +1,41 @@
-<div class="row">
-  <div class="columns">
+<article class="post <%= @post.published? ? "published" : "unpublished" %>">
 
-    <p>
-      <strong>Title:</strong>
-      <%= @post.title %>
-      <p id="author">
-        <b>By:</b>
-        <%= @post.author.email unless @post.author.nil? %>
-      </p>
-    </p>
+  <header class="row">
+    <div class="columns large-10">
 
-    <p>
-      <strong>Body:</strong>
-      <%= @post.body %>
-    </p>
-  </div>
-</div>
+      <h1><%= @post.title %></h1>
 
-<hr class="section-spacer">
-<div class="row">
-  <div class="columns">
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
-  </div>
-</div>
+      <small>
+        <em>By: <%= @post.author.username unless @post.author.nil? %></em> |
+        Posted on <%= @post.created_at.strftime("%B %d, %Y") %>
+        <% unless @post.published? %>
+          |
+          <b>Status:</b> <%= "Unpublished" %>
+        <% end %>
+      </small>
+    </div>
+  </header>
+
+  <hr class="section-spacer">
+
+  <section class="row">
+    <div class="columns large-10">
+      <%= markdown @post.body %>
+    </div>
+  </section>
+
+  <hr class="section-spacer">
+
+  <footer class="row">
+    <div class="columns">
+      <ul class="inline-list">
+        <% if(current_user) %>
+          <li><%= link_to 'Edit', edit_post_path(@post), class: 'button' %></li>
+          <li><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %></li>
+        <% end %>
+        <li><%= link_to 'Back', posts_path, class: 'button' %></li>
+      </ul>
+    </div>
+  </footer>
+
+</article>
