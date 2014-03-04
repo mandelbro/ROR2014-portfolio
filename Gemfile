@@ -30,7 +30,7 @@ group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
-  gem 'simplecov', :require => false
+  gem 'coveralls', require: false # Coveralls gem for test coverage
 end
 
 group :development do
