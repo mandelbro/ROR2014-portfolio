@@ -1,6 +1,7 @@
 require "test_helper"
 
 feature "Creating a Post" do
+
   scenario "submit form data to create a new post" do
     # Given a logged in user completed new post form
     sign_in(:author)
@@ -19,11 +20,6 @@ feature "Creating a Post" do
     page.text.must_include users(:author).username # Use your fixture name here.
     page.text.must_include "Status: Unpublished"
     page.find('article.post').has_css? ".unpublished"
-  end
-
-  scenario "unauthenticated site visitors cannot visit new_post_path" do
-    visit new_post_path
-    page.must_have_content "You need to sign in or sign up before continuing"
   end
 
   scenario "unauthenticated site visitors cannot see new post button" do
