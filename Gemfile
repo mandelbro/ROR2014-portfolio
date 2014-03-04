@@ -25,12 +25,12 @@ gem "minitest-rails" # Adds mini-test framework
 gem 'devise' # Adds Devise user authentication
 
 gem "pundit" # Adds policy-based authorization support
+gem 'coveralls', require: false # Coveralls gem for test coverage
 
 group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
-  gem 'coveralls', require: false # Coveralls gem for test coverage
 end
 
 group :development do
