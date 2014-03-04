@@ -8,4 +8,20 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   has_many :posts, foreign_key: "author_id"
+
+  def anonymous?
+    false
+  end
+
+  def authenticated?
+    true
+  end
+
+  def author?
+    self.role == 'author'
+  end
+
+  def editor?
+    self.role == 'editor'
+  end
 end
