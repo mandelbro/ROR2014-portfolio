@@ -1,31 +1,19 @@
 <div class="row">
   <div class="columns large-10 large-centered">
 
-    <h1>Listing posts</h1>
+    <h1>Code Snippets</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Body</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+    <div class="post-list">
+      <% @posts.each do |post| %>
+      <article class="post-item" id="<%= dom_id(post) %>">
+        <h3><%= link_to post.title, post %></h3>
+      </article>
+      <% end %>
+    </div>
 
-      <tbody>
-        <% @posts.each do |post| %>
-          <tr>
-            <td><%= post.title %></td>
-            <td><%= post.body %></td>
-            <td><%= link_to 'Show', post %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <hr class="section-spacer">
+
+    <%= link_to 'New Post', new_post_path, class: 'button medium' if current_user %>
 
   </div>
 </div>

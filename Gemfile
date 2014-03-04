@@ -24,10 +24,13 @@ gem "minitest-rails" # Adds mini-test framework
 
 gem 'devise' # Adds Devise user authentication
 
+gem "pundit" # Adds policy-based authorization support
+
 group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
+  gem 'simplecov', :require => false
 end
 
 group :development do

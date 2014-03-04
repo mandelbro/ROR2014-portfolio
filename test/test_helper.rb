@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
+# Previous content of test helper now starts here
+
 ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
@@ -25,9 +30,9 @@ end
 
 Turn.config.format = :pretty
 
-def sign_in
+def sign_in(role = :editor)
   visit new_user_session_path
-  fill_in "Email", with: "rewt@test.com"
+  fill_in "Email", with: users(role).email
   fill_in "Password", with: "password"
   page.find("form").click_on "Sign in"
 end
