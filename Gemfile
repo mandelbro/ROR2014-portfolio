@@ -24,6 +24,8 @@ gem "minitest-rails" # Adds mini-test framework
 
 gem 'devise' # Adds Devise user authentication
 
+gem "pundit" # Adds policy-based authorization support
+
 group :test do
 
   gem 'minitest-rails-capybara'
