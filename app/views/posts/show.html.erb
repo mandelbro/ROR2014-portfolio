@@ -26,11 +26,13 @@
 
   <hr class="section-spacer">
 
-  <footer class="row">
+  <footer class="post-options row">
     <div class="columns">
       <ul class="inline-list">
-        <% if(current_user) %>
+        <% if update? @post %>
           <li><%= link_to 'Edit', edit_post_path(@post), class: 'button' %></li>
+        <% end %>
+        <% if destroy? @post %>
           <li><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %></li>
         <% end %>
         <li><%= link_to 'Back', posts_path, class: 'button' %></li>
