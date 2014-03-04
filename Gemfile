@@ -30,6 +30,7 @@ group :test do
 
   gem 'minitest-rails-capybara'
   gem 'turn'
+  gem 'simplecov', :require => false
 end
 
 group :development do
