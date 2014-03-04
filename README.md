@@ -3,6 +3,7 @@
 My portfolio site built with Rails, BDD, Zepto, Foundation, and Unicorn Tears
 
 [![Build Status](https://travis-ci.org/mandelbro/ROR2014-portfolio.png?branch=master)](https://travis-ci.org/mandelbro/ROR2014-portfolio)
+[![Coverage Status](https://coveralls.io/repos/mandelbro/ROR2014-portfolio/badge.png?branch=master)](https://coveralls.io/r/mandelbro/ROR2014-portfolio?branch=master)
 
 ## Screenshots
 ![Homepage](https://dl.dropboxusercontent.com/u/8202470/Screenshot%202014-01-27%2023.55.13.png "Hi, I'm Chris")
