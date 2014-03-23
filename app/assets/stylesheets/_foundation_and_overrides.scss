@@ -1256,7 +1256,7 @@ $h1-font-size: em-calc(38);
 // Background color for the top bar
 
 $topbar-bg-color: rgba(0,0,0,0);
-// $topbar-bg: $topbar-bg-color;
+// $topbar-bg: rgba(0,0,0,0);
 
 // Height and margin
 
@@ -1274,7 +1274,7 @@ $topbar-bg-color: rgba(0,0,0,0);
 
 // Style the top bar dropdown elements
 
-// $topbar-dropdown-bg: #222;
+$topbar-dropdown-bg: $topbar-bg-color;
 // $topbar-dropdown-link-color: #fff;
 // // $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
 // $topbar-dropdown-toggle-size: 5px;

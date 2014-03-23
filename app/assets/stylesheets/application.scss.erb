@@ -9,6 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
- *= require_tree .
  */
+
+// setup
+@import "foundation_and_overrides";
+@import "variables";
+@import "mixins";
+@import "fonts";
+// content
+@import "layout";
+@import "typography";
+@import "components";
+@import "forms";
+@import "icons";

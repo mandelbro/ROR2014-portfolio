@@ -1,0 +1,212 @@
+
+/* Table of Content
+==================================================
+  #Global Styles
+  #Custom CSS Foundation 5.0.2
+  #Themes Styles
+  #Media queries are built using ems in Foundation. */
+
+/* #Global Styles
+------------------------------------------- */
+
+
+/* Body */
+ body {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+#page {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+}
+
+.main {
+  padding: 48px 0 145px;
+}
+
+.bck{
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 99;
+}
+
+
+/* Selection */
+ ::selection {
+  background-color: #777;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* = Scroll Webkit
+------------------------*/
+::-webkit-scrollbar{
+  width:0.2em;
+}
+::-webkit-scrollbar-track{
+  background-color:#bdc3c7;
+}
+::-webkit-scrollbar-thumb{
+  background-color:#7f8c8d;
+}
+
+/* Sections */
+.sections {
+  padding-top: 3em;
+  padding-bottom: 4em;
+}
+
+/* size of photo */
+.size-small{
+  width:5em;
+}
+.size-normal{
+  width:10em;
+}
+.size-large{
+  width:15em;
+}
+
+/* `Header Styles
+------------------------------------------- */
+#header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  background-color: #000000;
+  color: #DDDDDD;
+  text-align: center;
+  padding: 1.875rem 0;
+  bottom: 0px;
+  width: 100%;
+}
+.footer p {
+  margin: 0;
+}
+
+/* To Top footer button */
+.footer .toTop {
+  position: absolute;
+  cursor: pointer;
+  left: 50%;
+  right: 50%;
+  margin-left: -32px;
+  background: #000;
+  width: 32px;
+  height: 32px;
+  top: -15px;
+  color: #FFF;
+  line-height: 32px;
+  -webkit-border-radius: 1em 1em 0 0;
+  border-radius: 1em 1em 0 0;
+}
+
+.footer .toTop:hover {
+  color: #797979;
+}
+
+/* after header */
+.after_header{
+  background: #F7F7F7;
+  color: #8D8D8D;
+}
+.after_header h2{
+  color: #777777;
+}
+.after_header_col{
+  margin: 0;
+}
+.after_header_icon {
+  display: block;
+  width: 7em;
+  height: 7em;
+  line-height: 5em;
+  padding: 0.5em;
+  background-color: #FFFFFF;
+  border: 0.5em solid #E9E9E9;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  color: #777777;
+}
+.after_header  .breadcrumbs {
+  padding: 1.3em 0 0 0;
+  background-color: #F7F7F7;
+  border-color: #F7F7F7;
+}
+
+.after_header  .breadcrumbs > * a,
+.after_header   .breadcrumbs > * span {
+  text-transform: uppercase;
+  color: #0C0C0C;
+}
+
+/*  Icon animation */
+.html5_ef{
+  animation: html 5s ease  0.5s  infinite alternate none;
+  -webkit-animation: html 5s ease  0.5s  infinite alternate none;
+  -moz-animation: html 5s ease  0.5s  infinite alternate none;
+}
+.css3_ef{
+  animation: css 5s ease  1s  infinite alternate none;
+  -webkit-animation: css 5s ease  1s  infinite alternate none;
+  -moz-animation: css 5s ease  1s  infinite alternate none;
+}
+.eye_ef{
+  animation: eye 5s ease  1.2s  infinite alternate none;
+  -webkit-animation: eye 5s ease  1.2s  infinite alternate none;
+  -moz-animation: eye 5s ease  1.2s  infinite alternate none;
+}
+
+
+/* html5_ef */
+@-webkit-keyframes html{50%{background-color: #3498db ;border: 0.5em solid #2980b9;color: #FFF;}}
+@-moz-keyframes html{50%{background-color: #3498db ;border: 0.5em solid #2980b9;color: #FFF;}}
+@keyframes html{50%{background-color: #3498db ;border: 0.5em solid #2980b9;color: #FFF;}}
+
+/* css3_ef */
+@-webkit-keyframes css{50%{background-color: #e74c3c;border: 0.5em solid #c0392b;color: #FFF;}}
+@-moz-keyframes css{50%{background-color: #e74c3c;border: 0.5em solid #c0392b;color: #FFF;}}
+@keyframes css{50%{background-color: #e74c3c;border: 0.5em solid #c0392b;color: #FFF;}}
+
+/* eye_ef */
+@-webkit-keyframes eye{50%{background-color: #F09712;border: 0.5em solid #FCB36F;color: #FFF;}}
+@-moz-keyframes eye{50%{background-color: #F09712;border: 0.5em solid #FCB36F;color: #FFF;}}
+@keyframes eye{50%{background-color: #F09712;border: 0.5em solid #FCB36F;color: #FFF;}}
+
+
+/* show border */
+.show_border{
+  border: 0.3em solid #DADADA;
+}
+
+.widget {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Spacers */
+hr.section-spacer {
+  border: none;
+  margin: 0 0 2.5em;
+  padding: 0;
+  clear: both;
+  display: block;
+  -webkit-margin-collapse: separate;
+}

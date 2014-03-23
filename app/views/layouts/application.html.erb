@@ -22,7 +22,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="<%= (request.fullpath.parameterize.squish.size > 0 ? request.fullpath.parameterize.squish : 'home') %>">
 
     <div id="page">
 
@@ -30,12 +30,16 @@
 
       <%= render 'layouts/flash' %>
 
-      <div class="main <%= (request.fullpath.parameterize.squish.size > 0 ? request.fullpath.parameterize.squish : 'home') %>">
+      <div class="main">
         <%= yield %>
       </div>
 
       <%= render 'layouts/footer' %>
 
     </div>
+
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
   </body>
 </html>

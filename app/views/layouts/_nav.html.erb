@@ -1,41 +1,24 @@
 
 
 <header id="header" class="bck">
-  <div class="row">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <!-- Title Area -->
-        <li class="toggle-topbar menu-icon">
-          <a href="#">
-            <span>Menu</span>
-          </a>
-        </li>
-      </ul><!-- /.title-area -->
+  <div id="logo" class="left">Chris Montes</div>
+  <nav class="top-bar right" data-topbar>
 
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li><a href="/">Home</a></li>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><i class="icon_divider  fi-asterisk size-12"></i></li>
+        <li><%= link_to "Projects", projects_path %></li>
+        <li><i class="icon_divider  fi-asterisk size-12"></i></li>
+        <li><%= link_to "Posts", posts_path %></li>
+        <% unless current_user.nil? %>
           <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-          <li><%= link_to "Projects", projects_path %></li>
-          <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-          <li><%= link_to "Posts", posts_path %></li>
-          <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-          <% if current_user.nil? %>
-            <li>
-              <%= link_to "Sign Up", new_user_registration_path %>
-            </li>
-            <li><i class="icon_divider  fi-asterisk size-12"></i></li>
-            <li>
-              <%= link_to "Sign In", new_user_session_path %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
-            </li>
-          <% end %>
-        </ul><!-- /.right -->
-      </section><!-- /.top-bar-section -->
-    </nav> <!-- /.top-bar -->
-  </div><!-- /.row -->
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+          </li>
+        <% end %>
+      </ul>
+    </section><!-- /.top-bar-section -->
+  </nav> <!-- /.top-bar -->
 </header><!-- /#header -->

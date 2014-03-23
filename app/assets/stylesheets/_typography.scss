@@ -1,0 +1,76 @@
+/* `Variables
+--------------------------------------------------------------------------------*/
+
+$normal_font: "pt serif", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$medium_font: "AG Medium", Helvetica, sans-serif;
+$bold_font: "AG Bold", Helvetica, sans-serif;
+
+$header_font: $medium_font;
+$body_font: $normal_font;
+
+$button-font-family: $medium_font;
+$button-font-med: emCalc(16);
+$button-font-tny: emCalc(11);
+$button-font-sml: emCalc(13);
+
+
+/* `Main Typography
+--------------------------------------------------------------------------------*/
+body {
+  line-height: 1.231;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: $header_font;
+  strong {
+    font-family: $bold_font;
+  }
+}
+
+h1 {
+  font-size: emCalc(44);
+  color: $dark_grey;
+}
+
+h2 {
+  font-size: emCalc(28);
+  color: $dark_grey;
+}
+
+h3 {
+  font-family: $bold_font;
+  font-size: emCalc(14);
+}
+
+h4 {
+  font-family: $body_font;
+  font-size: emCalc(18);
+  font-weight: normal;
+}
+
+.money {
+  font-weight: 700;
+}
+
+#header {
+  nav a {
+    font-weight: 500;
+  }
+}
+
+p, .text-content {
+  font-size: emCalc(13);
+  letter-spacing: emCalc(1.5);
+  line-height: emCalc(28);
+}
+
+
+/* `Buttons
+--------------------------------------------------------------------------------*/
+.button {
+  &.large {
+    font-family: $medium_font;
+  }
+}

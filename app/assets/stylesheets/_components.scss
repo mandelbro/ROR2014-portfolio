@@ -1,0 +1,264 @@
+@import 'components/masthead';
+@import 'components/thumbnails';
+
+
+.this_is_home{
+  padding-bottom: 10em;
+}
+
+.divider {
+  color: #777;
+  text-align: center;
+}
+
+.info_box {
+  text-align: center;
+}
+
+.recentwork_box {
+  text-align: center;
+  background-color: #F7F7F7;
+}
+
+.prefooter{
+  text-align: center;
+  padding: 50px 0;
+}
+
+/* Link */
+ a {
+  color: #f04124;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+a:hover {
+  color: #ea2f10;
+  text-decoration: underline;
+}
+a:focus {
+  outline: none;
+  outline: 0 auto -webkit-focus-ring-color;
+  outline-offset: 0;
+}
+/* logo */
+.logo,.info_text{
+  font-family: "lato",cursive;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.logo:hover{
+  text-decoration: none;
+}
+
+/* info */
+.info {
+  margin-top: 5em;
+}
+.info_text {
+  color: #000000;
+  font-size: 10em;
+  text-shadow: 4px 4px 0px #D5D5D5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Windows  like explorer */
+.window{
+  position: relative;
+  width:100%;
+  padding-bottom: 75%;
+  margin-bottom: 2em;
+  height: 0;
+  overflow: hidden;
+  background: #F1F1F1;
+  border-width: 1px;
+  border-color: #E7E7E7;
+  border-style:solid;
+  border-radius: 3px;
+  display: block;
+}
+.window-search{
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  background: #FFFFFF;
+  width: 70%;
+  padding: 0.3em;
+  border-width:1px;
+  border-color: #E2E2E2;
+  border-style:solid;
+  color: #929292;
+}
+.window-buttons{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  background: #C0392B;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: -1.5em 0 #D35400,-3em 0 #16A085;
+  -moz-box-shadow: -1.5em 0 #E29610,-3em 0 #5ACF18;
+  box-shadow: -1.5em 0 #D35400,-3em 0 #16A085;
+}
+.window-body{
+   margin-top: 4em;
+}
+
+@media (max-width: 480px) {
+  .window-search{
+  width: 60%;
+  }
+  .window-body{
+  width: 100%;
+  }
+}
+
+/* #Media queries
+------------------------------------------- */
+
+/* Max-width 60rem = 1024px */
+ @media only screen and (max-width: 64rem) {
+  .top-bar .name h1 a{
+  color:#333;
+  }
+  .info_text {
+  font-size: 9em;
+  }
+  .after_header {
+  padding: 4em;
+  }
+  .tumb{
+  width: 228px;
+  height: 185px;
+
+  }
+}
+/* Max-width 50rem = 800px */
+ @media only screen and (max-width: 50rem) {
+  .top-bar .name h1 a{
+  color:#333;
+  }
+  .info_text {
+  font-size: 8em;
+  }
+  .after_header {
+  padding: 3em;
+  }
+  .tumb{
+  width: 340px;
+  height: 190px;
+
+}
+}
+/* Max-width 40rem = 640px */
+ @media only screen and (max-width: 40rem) {
+  .top-bar .name h1 a{
+  color:white;
+  }
+  .icon_divider {
+    display: none;
+  }
+  .info_text {
+  font-size: 7em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 280px;
+  height: 190px;
+  }
+}
+/* Max-width 35.5rem = 568px */
+ @media only screen and (max-width: 35.5rem) {
+  .top-bar .name h1 a{
+  color:white;
+  }
+  .icon_divider {
+    display: none;
+  }
+  .info_text {
+  font-size: 6em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 495px;
+  height: 189px;
+  }
+}
+/* Max-width 30rem = 480px */
+ @media only screen and (max-width: 30rem) {
+  .top-bar .name h1 a{
+  color:white;
+  }
+  .icon_divider {
+    display: none;
+  }
+  .info_text {
+  font-size: 5em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 400px;
+  height: 190px;
+  }
+}
+/* Max-width 24rem = 384px */
+ @media only screen and (max-width: 24rem) {
+  .top-bar .name h1 a{
+  color:white;
+  }
+  .icon_divider {
+    display: none;
+  }
+  .info_text {
+  font-size: 4em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 320px;
+  height: 190px;
+  }
+}
+/* Max-width 20rem = 320px */
+ @media only screen and (max-width: 20rem) {
+  .top-bar .name h1 a{
+  color:white;
+  }
+  .icon_divider {
+      display: none;
+  }
+  .info_text {
+  font-size: 3em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 280px;
+  height: 190px;
+  }
+}
+/* Max-width 15rem = 240px */
+ @media only screen and (max-width: 15rem) {
+  .icon_divider {
+    display: none;
+  }
+  .info_text {
+  font-size: 2em;
+  }
+  .after_header {
+  padding: 1em;
+  }
+  .tumb{
+  width: 320px;
+  height: 190px;
+  }
+}
