@@ -1,6 +1,6 @@
 class PostPolicy < ApplicationPolicy
 
-  class Scope < Struct.new(:user, :scope)
+  class Scope = Struct.new(:user, :scope)
     def resolve
 
       if user && user.editor?
