@@ -1,13 +1,21 @@
 
-(function($, window ){
+(function($, window, undefined ){
 
-$(document).ready(function(){
+  function resizeMasthead () {
+    $('.masthead').height($(window).height());
+  }
+
+  $(document).ready(function(){
     // To Top function
     $('.toTop').on('click',function(){
-       $("html, body").animate({ scrollTop: 0 }, "slow");
+       jQuery("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
     });
+
+    resizeMasthead();
+
+    $(window).on('resize.masthead', resizeMasthead);
   });
 
-})( jQuery, this );
+})( window.Zepto || window.jQuery, this );
 
