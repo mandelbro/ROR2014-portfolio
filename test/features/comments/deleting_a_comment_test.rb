@@ -4,35 +4,35 @@ feature "Deleting a comment" do
   scenario "Editors can delete any comment with a click" do
     # Given an existing post with comments
     sign_in(:editor)
-    visit posts(:love_git)
+    visit post_path(posts(:love_git))
 
     # When the delete link is clicked
-    page.find(".comment-list #{comments(:test).id}").click_on "Delete"
+    page.find(".comment-list #comment-#{comments(:test).id}").click_on "Delete"
 
     # Then the comment is deleted
     page.must_have_content "Comment was successfully deleted."
-    page.find('.comment-list').wont_have_content comments(:test).body
+    page.find('.comment-list').wont_have_content comments(:test).content
 
   end
 
-  scenario "Users can delete their own any comment with a click" do
+  scenario "Users can delete their own comment with a click" do
     # Given an existing comment
     sign_in(:user)
-    visit posts(:love_git)
+    visit post_path(posts(:love_git))
 
     # When the delete link is clicked
-    page.find(".comment-list #{comments(:user_test).id}").click_on "Delete"
+    page.find(".comment-list #comment-#{comments(:user_test).id}").click_on "Delete"
 
     # Then the comment is deleted
     page.must_have_content "Comment was successfully deleted."
-    page.find('.comment-list').wont_have_content comments(:test).body
+    page.find('.comment-list').wont_have_content comments(:user_test).content
 
   end
 
   scenario "unauthenticated site visitors cannot see the delete button" do
-    visit posts(:love_git)
-    page.must_have_content comments(:test).body
-    page.find(".comment-list #{comments(:test).id}").wont_have_content "Delete"
+    visit post_path(posts(:love_git))
+    page.must_have_content comments(:test).content
+    page.find(".comment-list #comment-#{comments(:test).id}").wont_have_content "Delete"
   end
 
   scenario "unauthorized users cannot see the delete button" do
@@ -40,11 +40,11 @@ feature "Deleting a comment" do
     sign_in(:user)
 
     # When I visit a comment that I didn't create
-    visit posts(:love_git)
+    visit post_path(posts(:love_git))
 
     # I should not see the Delete button
-    page.must_have_content comments(:cr).body
-    page.find(".comment-list #{comments(:test).id}").wont_have_content "Delete"
+    page.must_have_content comments(:test).content
+    page.find(".comment-list #comment-#{comments(:test).id}").wont_have_content "Delete"
   end
 
 end

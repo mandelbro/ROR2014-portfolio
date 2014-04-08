@@ -1,0 +1,37 @@
+<% if comment? @post %>
+
+  <%= form_for([@post, @comment]) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.hidden_field :referrer, value: request.referer %>
+
+    <div class="field">
+      <%= f.label :content %><br>
+      <%= f.text_area :content %>
+    </div>
+
+    <% if approve? @comment %>
+
+      <div class="field">
+        <%= f.label :approved, 'Approve?' %>
+        <%= f.check_box :approved, checked: true %>
+      </div>
+
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit 'Comment', class: 'button' %>
+    </div>
+  <% end %>
+
+<% end %>

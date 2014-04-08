@@ -1,6 +1,12 @@
 Portfolio::Application.routes.draw do
+
   devise_for :users
-  resources :posts
+
+  resources :posts do
+    resources :comments do
+      get 'approve', to: :approve, on: :member
+    end
+  end
 
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.

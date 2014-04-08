@@ -6,36 +6,38 @@ feature "Visiting the Comment Index" do
   scenario "anonymous user visits comment index" do
 
     # When I visit /comments
-    visit posts(:love_git)
+    visit post_path(posts(:love_git))
 
-    # Then the published comments should be loaded
-    page.text.must_include comments(:test).body
-    # And the unpublished comments should be hidden
-    page.text.wont_include comments(:user_unpublished).title
+    # Then the approved comments should be loaded
+    page.find('.comment-list').text.must_include comments(:test).content
+    # And the unapproved comments should be hidden
+    page.find('.comment-list').text.wont_include comments(:user_unapproved).content
   end
 
   scenario "user visits post he commented on index" do
     # Given a logged in user
-    visit posts(:love_git)
+    sign_in(:user)
+    visit post_path(posts(:love_git))
 
-    # Then the published comments should be loaded
-    page.text.must_include comments(:test).body
-    # And the unpublished comments should be hidden
-    page.text.must_include comments(:user_unpublished).title
-    # And the unpublished comments should be hidden
-    page.text.must_not_include comments(:author_unpublished).title
+    # Then the approved comments should be loaded
+    page.find('.comment-list').text.must_include comments(:test).content
+    # And the unapproved comments should be hidden
+    page.find('.comment-list').text.must_include comments(:user_unapproved).content
+    # And the unapproved comments should be hidden
+    page.find('.comment-list').text.wont_include comments(:author_unapproved).content
 
   end
 
   scenario "editor visits comment index" do
     # Given a logged in user
-    visit posts(:love_git)
+    sign_in(:editor)
+    visit post_path(posts(:love_git))
 
-    # Then the published comments should be loaded
-    page.text.must_include comments(:test).body
-    # And the unpublished comments should be hidden
-    page.text.must_include comments(:user_unpublished).title
-    # And the unpublished comments should be hidden
-    page.text.must_include comments(:author_unpublished).title
+    # Then the approved comments should be loaded
+    page.find('.comment-list').text.must_include comments(:test).content
+    # And the unapproved comments should be hidden
+    page.find('.comment-list').text.must_include comments(:user_unapproved).content
+    # And the unapproved comments should be hidden
+    page.find('.comment-list').text.must_include comments(:author_unapproved).content
   end
 end

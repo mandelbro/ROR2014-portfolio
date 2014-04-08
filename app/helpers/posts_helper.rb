@@ -12,4 +12,8 @@ module PostsHelper
     policy(post).update?
   end
 
+  def comment? post
+    policy(post).comment?
+  end
+
 end

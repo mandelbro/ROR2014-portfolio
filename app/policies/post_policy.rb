@@ -1,6 +1,6 @@
 class PostPolicy < ApplicationPolicy
 
-  class Scope = Struct.new(:user, :scope)
+  class Scope < Struct.new(:user, :scope)
     def resolve
 
       if user && user.editor?
@@ -15,31 +15,23 @@ class PostPolicy < ApplicationPolicy
   end
 
   def show?
-    record.published? || (user.editor? || owner_of?)
+    record.published? || (editor? || owner_of?)
   end
 
   def create?
     authenticated?
   end
 
+  alias_method :comment?, :create?
+
   def update?
-    authenticated? && (user.editor? || owner_of?)
+    editor? || owner_of?
   end
 
-  def destroy?
-    authenticated? && (user.editor? || owner_of?)
-  end
+  alias_method :destroy?, :update?
 
   def publish?
-    authenticated? && user.editor?
-  end
-
-  def owner_of?
-    record.author == user
-  end
-
-  def authenticated?
-    !user.nil?
+    editor?
   end
 
   def permitted_attributes
@@ -49,5 +41,19 @@ class PostPolicy < ApplicationPolicy
       [:title, :body]
     end
   end
+
+  private
+
+    def authenticated?
+      !user.nil?
+    end
+
+    def editor?
+      authenticated? && user.editor?
+    end
+
+    def owner_of?
+      authenticated? && record.author == user
+    end
 
 end

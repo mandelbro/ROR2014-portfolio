@@ -21,6 +21,11 @@
   <section class="row">
     <div class="columns large-10">
       <%= markdown @post.body %>
+      <div class="row">
+        <div class="columns large-10">
+          <%= render 'comments/list', comments: @comments %>
+        </div>
+      </div>
     </div>
   </section>
 

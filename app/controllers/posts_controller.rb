@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     authorize @post
+    @comment = Comment.new
+    @comments = policy_scope(@post.comments)
   end
 
   # GET /posts/new
