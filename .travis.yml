@@ -16,6 +16,6 @@ deploy:
     - restart
 before_script:
   - psql -c 'create database portfolio_test' -U postgres
-  - "rake db:migrate"
+  - "bundle exec rake db:migrate"
 env:
   - DB=postgresql
