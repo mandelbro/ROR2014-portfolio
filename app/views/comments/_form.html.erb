@@ -14,13 +14,14 @@
     <% end %>
 
     <%= f.hidden_field :referrer, value: request.referer %>
+    <%= f.hidden_field :referrer, value: request.referer %>
 
     <div class="field">
       <%= f.label :content %><br>
       <%= f.text_area :content %>
     </div>
 
-    <% if approve? @comment %>
+    <% if update? @comment %>
 
       <div class="field">
         <%= f.label :approved, 'Approve?' %>

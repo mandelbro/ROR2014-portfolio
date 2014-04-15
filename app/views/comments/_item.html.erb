@@ -2,14 +2,18 @@
   <div class="comment-user"><strong><%= comment.user.username %></strong></div>
   <p class="comment-content"><%= comment.content %></p>
   <ul class="inline-list">
+
     <% unless comment.approved? %>
       <li class="comment-status">Status: Unapproved</li>
-      <% if policy(comment).approve? %>
-        <li><%= link_to 'Approve', approve_post_comment_path(@post, comment), class: 'button small success' %></li>
+      <% if policy(comment).update? %>
+        <li><%= button_to 'Approve', post_comment_path(@post, comment, comment: { approved: true, action: 'approved' }), method: :patch, class: 'button small success' %></li>
+        <li><%= button_to 'Mark as spam', spam_post_comment_path(@post, comment), method: :patch, class: 'button small alert' %></li>
       <% end %>
     <% end %>
+
     <% if policy(comment).destroy? %>sdfsdfs
       <li><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'button small alert' %></li>
     <% end %>
+
   </ul>
 </li>

@@ -7,6 +7,7 @@ user_test:
   user_ip: 127.0.0.1
   user_agent: agent string
   referrer: google.com
+  junk: false
 
 user_unapproved:
   content: Unapproved user test comment
@@ -17,6 +18,7 @@ user_unapproved:
   user_ip: 127.0.0.1
   user_agent: agent string
   referrer: google.com
+  junk: false
 
 author_unapproved:
   content: Unapproved author test comment
@@ -27,6 +29,7 @@ author_unapproved:
   user_ip: 127.0.0.1
   user_agent: agent string
   referrer: google.com
+  junk: false
 
 test:
   content: Test comment
@@ -37,3 +40,4 @@ test:
   user_ip: 127.0.0.1
   user_agent: agent string
   referrer: google.com
+  junk: false

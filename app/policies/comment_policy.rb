@@ -19,7 +19,7 @@ class CommentPolicy < ApplicationPolicy
     authenticated?
   end
 
-  def approve?
+  def update?
     editor?
   end
 

@@ -34,5 +34,8 @@ module Portfolio
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
     I18n.enforce_available_locales = false
+
+    config.rakismet.key = ENV['AKISMENT_KEY']
+    config.rakismet.url = 'http://chrismontes.com/'
   end
 end

@@ -1,7 +1,7 @@
 module CommentsHelper
 
-  def approve? comment
-    policy(comment).approve?
+  def update? comment
+    policy(comment).update?
   end
 
   def destroy? comment
