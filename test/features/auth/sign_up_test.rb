@@ -5,12 +5,11 @@ feature 'As a user
         so that I can perform actions that require me to be logged in' do
   scenario "user submits registration form" do
     # Given a registration form
-    visit "/"
-    page.find('#header').click_on "Sign Up"
+    visit new_user_registration_path
 
     # When I submit the login form with valid info
-    fill_in "Username", with: "test_user"
-    fill_in "Email", with: "test@test.com"
+    fill_in "Username", with: "test_test_user"
+    fill_in "Email", with: "testestst@testtest.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
 

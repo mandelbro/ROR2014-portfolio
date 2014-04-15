@@ -23,6 +23,10 @@ gem 'redcarpet'
 gem "minitest-rails" # Adds mini-test framework
 
 gem 'devise' # Adds Devise user authentication
+gem 'omniauth' # Adds base omniauth
+gem 'omniauth-twitter' # Adds twitter oauth login
+gem 'figaro' # Manages environment config variables like API keys
+gem 'rakismet' # Adds Akismet integration
 
 gem "pundit" # Adds policy-based authorization support
 gem 'coveralls', require: false # Coveralls gem for test coverage

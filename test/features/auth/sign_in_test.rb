@@ -5,8 +5,7 @@ feature 'As a user
          so that the website allows me to perform the actions of an authenticated user' do
   scenario "user signs in to website with correct details" do
     # Given a registration form
-    visit "/"
-    page.find('#header').click_on "Sign In"
+    visit new_user_session_path
 
     # When I register with valid info
     fill_in "Email", with: "rewt@test.com"
