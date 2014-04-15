@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="columns large-10">
+
+    <h3>Comments</h3>
+
+    <%= render 'comments/form' %>
+
+    <div class="comment-list">
+      <% if comments.empty? %>
+      There aren't any comments yet.
+      <% else %>
+        <ul class="stripped">
+        <% comments.each do |comment| %>
+          <%= render 'comments/item', comment: comment %>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+  </div>
+</div>
