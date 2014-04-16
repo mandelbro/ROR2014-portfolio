@@ -14,7 +14,7 @@
     <% end %>
 
     <%= f.hidden_field :referrer, value: request.referer %>
-    <%= f.hidden_field :referrer, value: request.referer %>
+    <%= f.hidden_field :commentable, value: @comment.commentable_type %>
 
     <div class="field">
       <%= f.label :content %><br>

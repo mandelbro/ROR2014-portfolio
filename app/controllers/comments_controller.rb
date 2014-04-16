@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :spam, :destroy]
-  before_action :set_post, only: [:create, :update, :spam, :destroy]
+  before_action :set_commentable, only: [:update, :spam, :destroy]
   before_action :authenticate_user!
   after_action :verify_authorized
 
@@ -10,8 +9,8 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.junk = @comment.spam?
     @comment.user_agent = request.user_agent
-    @post.comments << @comment
     current_user.comments << @comment
+    @commentable.comments << @comment
 
     respond_to do |format|
       if @comment.save
@@ -24,7 +23,7 @@ class CommentsController < ApplicationController
 
   # PATCH /posts/:post_id/comments/:id/approve
   def update
-    authorize @comment
+    authorize @commentable.comment
     action = params['comment']['action'] || 'updated'
     respond_to do |format|
       if @comment.update(comment_params)
@@ -57,12 +56,17 @@ class CommentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
+    def set_commentable
+      @comment = @commentable.comments.find(params[:id]) if params[:id]
+      @commentable = params[:comment][:commentable].classify.constantize.find(commentable_id)
+      render text: @commentable.to_yaml
     end
 
-    def set_post
-      @post = Post.find(params[:post_id])
+    def get_commentable
+    end
+
+    def commentable_id
+      params[(params[:comment][:commentable].singularize + "_id").to_sym]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

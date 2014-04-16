@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @comment = @project.comments.new
+    @comment.commentable_type = 'project'
   end
 
   def new

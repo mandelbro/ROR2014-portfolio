@@ -1,7 +1,8 @@
 user_test:
   content: User test comment
   approved: true
-  post: love_git
+  commentable: love_git
+  commentable_type: post
   user: user
   approved: true
   user_ip: 127.0.0.1
@@ -12,7 +13,8 @@ user_test:
 user_unapproved:
   content: Unapproved user test comment
   approved: true
-  post: love_git
+  commentable: love_git
+  commentable_type: post
   user: user
   approved: false
   user_ip: 127.0.0.1
@@ -23,7 +25,8 @@ user_unapproved:
 author_unapproved:
   content: Unapproved author test comment
   approved: true
-  post: love_git
+  commentable: love_git
+  commentable_type: post
   user: author
   approved: false
   user_ip: 127.0.0.1
@@ -34,7 +37,8 @@ author_unapproved:
 test:
   content: Test comment
   approved: true
-  post: love_git
+  commentable: love_git
+  commentable_type: post
   user: author
   approved: true
   user_ip: 127.0.0.1

@@ -1,14 +1,15 @@
 Portfolio::Application.routes.draw do
 
+  concern :commentable do
+    resources :comments do
+    end
+  end
+
   devise_for :users,
     path_names: { sign_in: 'login', sign_out: 'logout' },
     controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :posts do
-    resources :comments do
-      patch 'spam', to: :spam, on: :member
-    end
-  end
+  resources :posts, concerns: :commentable
 
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
