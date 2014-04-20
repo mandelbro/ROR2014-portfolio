@@ -2,6 +2,7 @@ Portfolio::Application.routes.draw do
 
   concern :commentable do
     resources :comments do
+      patch 'spam', to: :spam, on: :member
     end
   end
 
@@ -18,7 +19,7 @@ Portfolio::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :projects
+  resources :projects, concerns: :commentable
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

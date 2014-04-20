@@ -21,8 +21,24 @@
   </div>
 </div>
 
+<hr class="section-spacer">
+
+<footer class="project-options row">
+  <div class="columns">
+    <ul class="inline-list">
+      <% if update? @project %>
+        <li><%= link_to 'Edit', edit_project_path(@project), class: 'button' %></li>
+      <% end %>
+      <% if destroy? @project %>
+        <li><%= link_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %></li>
+      <% end %>
+      <li><%= link_to 'Back', projects_path, class: 'button' %></li>
+    </ul>
+  </div>
+</footer>
+
 <div class="row">
   <div class="columns large-10">
-    <%= render 'comments/list', comments: @comments %>
+    <%= render 'comments/list', commentable: @project, comments: @comments %>
   </div>
 </div>
