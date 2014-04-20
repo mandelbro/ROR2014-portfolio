@@ -1,5 +1,9 @@
 module PostsHelper
 
+  def create?
+    policy(Post.new).create?
+  end
+
   def publish? post
     policy(post).publish?
   end

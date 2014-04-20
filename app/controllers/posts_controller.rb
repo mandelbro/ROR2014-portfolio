@@ -15,7 +15,6 @@ class PostsController < ApplicationController
   def show
     authorize @post
     @comment = @post.comments.new
-    @comment.commentable_type = 'post'
     @comments = policy_scope(@post.comments)
   end
 

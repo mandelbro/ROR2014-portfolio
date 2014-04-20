@@ -1,9 +1,10 @@
-<% if comment? @post %>
-
-  <%= form_for([@post, @comment]) do |f| %>
+<% if comment? commentable %>
+  <%= form_for([commentable, @comment],
+      url: polymorphic_path([commentable, @comment], :commentable => commentable.class.to_s.underscore),
+      :html => {:method => :post}) do |f| %>
     <% if @comment.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
         <ul>
         <% @comment.errors.full_messages.each do |msg| %>
@@ -14,7 +15,6 @@
     <% end %>
 
     <%= f.hidden_field :referrer, value: request.referer %>
-    <%= f.hidden_field :commentable, value: @comment.commentable_type %>
 
     <div class="field">
       <%= f.label :content %><br>

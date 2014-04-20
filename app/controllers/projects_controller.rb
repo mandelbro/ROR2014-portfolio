@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @comment = @project.comments.new
-    @comment.commentable_type = 'project'
+    @comments = policy_scope(@project.comments)
   end
 
   def new
