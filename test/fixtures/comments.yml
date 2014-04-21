@@ -34,6 +34,42 @@ author_unapproved:
   referrer: google.com
   junk: false
 
+upco_user_test:
+  content: User test comment
+  approved: true
+  commentable: upco
+  commentable_type: project
+  user: user
+  approved: true
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+upco_user_unapproved:
+  content: Unapproved user test comment
+  approved: true
+  commentable: upco
+  commentable_type: project
+  user: user
+  approved: false
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+author_unapproved:
+  content: Unapproved author test comment
+  approved: true
+  commentable: upco
+  commentable_type: project
+  user: author
+  approved: false
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
 test:
   content: Test comment
   approved: true

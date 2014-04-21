@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   has_many :posts, foreign_key: "author_id"
+  has_many :projects
   has_many :comments
 
   def anonymous?

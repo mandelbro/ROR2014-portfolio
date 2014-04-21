@@ -35,9 +35,9 @@ feature "Visiting the Comment Section of a Project" do
     visit project_path(projects(:upco))
 
     # Then the approved comments should be loaded
-    page.find('.comment-list').text.must_include comments(:test).content
+    page.find('.comment-list').text.must_include comments(:upco_test).content
     # And the unapproved comments should be hidden
-    page.find('.comment-list').text.wont_include comments(:user_unapproved).content
+    page.find('.comment-list').text.wont_include comments(:upco_user_unapproved).content
   end
 
   scenario "user visits project he commented on" do
@@ -46,11 +46,11 @@ feature "Visiting the Comment Section of a Project" do
     visit project_path(projects(:upco))
 
     # Then the approved comments should be loaded
-    page.find('.comment-list').text.must_include comments(:test).content
+    page.find('.comment-list').text.must_include comments(:upco_test).content
     # And the unapproved comments should be hidden
-    page.find('.comment-list').text.must_include comments(:user_unapproved).content
+    page.find('.comment-list').text.must_include comments(:upco_user_unapproved).content
     # And the unapproved comments should be hidden
-    page.find('.comment-list').text.wont_include comments(:author_unapproved).content
+    page.find('.comment-list').text.wont_include comments(:upco_author_unapproved).content
 
   end
 
@@ -60,10 +60,10 @@ feature "Visiting the Comment Section of a Project" do
     visit project_path(projects(:upco))
 
     # Then the approved comments should be loaded
-    page.find('.comment-list').text.must_include comments(:test).content
+    page.find('.comment-list').text.must_include comments(:upco_test).content
     # And the unapproved comments should be hidden
-    page.find('.comment-list').text.must_include comments(:user_unapproved).content
+    page.find('.comment-list').text.must_include comments(:upco_user_unapproved).content
     # And the unapproved comments should be hidden
-    page.find('.comment-list').text.must_include comments(:author_unapproved).content
+    page.find('.comment-list').text.must_include comments(:upco_author_unapproved).content
   end
 end

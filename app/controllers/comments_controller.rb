@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.junk = @comment.spam?
     @comment.user_agent = request.user_agent
+    @commentable.comments << @comment
     current_user.comments << @comment
 
     respond_to do |format|

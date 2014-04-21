@@ -1,44 +1,53 @@
 
-<div class="row">
-  <div class="columns">
-    <h1><%= @project.company %></h1>
-  </div>
-</div>
+<div id="project" class="<%= @project.published? ? 'published' : 'unpublished' %>">
 
-<hr class="section-spacer">
-
-<div class="row">
-  <div class="columns large-6">
-    <%= markdown @project.body %>
-  </div>
-</div>
-
-<hr class="section-spacer">
-
-<div class="row">
-  <div class="columns large-6">
-    <%= @project.technologies %>
-  </div>
-</div>
-
-<hr class="section-spacer">
-
-<footer class="project-options row">
-  <div class="columns">
-    <ul class="inline-list">
-      <% if update? @project %>
-        <li><%= link_to 'Edit', edit_project_path(@project), class: 'button' %></li>
+  <div class="row">
+    <div class="columns">
+      <h1><%= @project.company %></h1>
+      <% unless @project.published? %>
+      <div class="status">
+        <strong>Status:</strong> Unpublished
+      </div>
       <% end %>
-      <% if destroy? @project %>
-        <li><%= link_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %></li>
-      <% end %>
-      <li><%= link_to 'Back', projects_path, class: 'button' %></li>
-    </ul>
+    </div>
   </div>
-</footer>
 
-<div class="row">
-  <div class="columns large-10">
-    <%= render 'comments/list', commentable: @project, comments: @comments %>
+  <hr class="section-spacer">
+
+  <div class="row">
+    <div class="columns large-6">
+      <%= markdown @project.body %>
+    </div>
   </div>
+
+  <hr class="section-spacer">
+
+  <div class="row">
+    <div class="columns large-6">
+      <%= @project.technologies %>
+    </div>
+  </div>
+
+  <hr class="section-spacer">
+
+  <footer class="project-options row">
+    <div class="columns">
+      <ul class="inline-list">
+        <% if update? @project %>
+          <li><%= link_to 'Edit', edit_project_path(@project), class: 'button' %></li>
+        <% end %>
+        <% if destroy? @project %>
+          <li><%= button_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %></li>
+        <% end %>
+        <li><%= link_to 'Back', projects_path, class: 'button' %></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="row">
+    <div class="columns large-10">
+      <%= render 'comments/list', commentable: @project, comments: @comments %>
+    </div>
+  </div>
+
 </div>

@@ -5,6 +5,8 @@ class ProjectPolicy < ApplicationPolicy
 
       if user && user.editor?
         scope.all
+      elsif user && user.author?
+        scope.where(user: user)
       else
         scope.where(published: true)
       end
@@ -13,16 +15,18 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def show?
-    record.published? || editor?
+    record.published? || (editor? || owner_of?)
   end
 
   alias_method :comment?, :show?
 
   def create?
-    editor?
+    editor? || author?
   end
 
-  alias_method :update?, :create?
+  def update?
+    editor? || owner_of?
+  end
 
   alias_method :destroy?, :update?
 
@@ -31,7 +35,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    if user.editor?
+    if create?
       [:company, :body, :technologies, :lead_image, :other_images, :quote, :quote_attr, :published]
     end
   end
@@ -44,6 +48,14 @@ class ProjectPolicy < ApplicationPolicy
 
     def editor?
       authenticated? && user.editor?
+    end
+
+    def author?
+      authenticated? && user.author?
+    end
+
+    def owner_of?
+      authenticated? && record.user == user
     end
 
 end

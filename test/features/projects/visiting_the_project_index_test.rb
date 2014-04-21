@@ -17,9 +17,9 @@ feature "An index page displaying all projects" do
     visit projects_path
 
     # Then the published projects should be loaded
-    page.text.must_include projects(:cr).title
+    page.text.must_include projects(:spt).company
     # And the unpublished projects should be hidden
-    page.text.wont_include projects(:author_unpublished).title
+    page.text.wont_include projects(:author_unpublished).company
   end
 
   scenario "author visits project index" do
@@ -29,11 +29,11 @@ feature "An index page displaying all projects" do
     visit projects_path
 
     # Then I should only see my own projects
-    page.text.must_include projects(:author_published).title
-    page.text.must_include projects(:author_unpublished).title
-    page.text.wont_include projects(:cr).title
-    page.text.wont_include projects(:love_git).title
-    page.text.wont_include projects(:hate_git).title
+    page.text.must_include projects(:author_published).company
+    page.text.must_include projects(:author_unpublished).company
+    page.text.wont_include projects(:spt).company
+    page.text.wont_include projects(:rmv).company
+    page.text.wont_include projects(:upco).company
   end
 
   scenario "editor visits project index" do
@@ -43,10 +43,10 @@ feature "An index page displaying all projects" do
     visit projects_path
 
     # Then I should all published and unpublished projects
-    page.text.must_include projects(:author_published).title
-    page.text.must_include projects(:author_unpublished).title
-    page.text.must_include projects(:cr).title
-    page.text.must_include projects(:love_git).title
+    page.text.must_include projects(:author_published).company
+    page.text.must_include projects(:author_unpublished).company
+    page.text.must_include projects(:spt).company
+    page.text.must_include projects(:upco).company
   end
 end
 

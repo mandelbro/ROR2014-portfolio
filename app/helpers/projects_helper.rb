@@ -20,4 +20,8 @@ module ProjectsHelper
     policy(project).comment?
   end
 
+  def publish? project
+    policy(project).publish?
+  end
+
 end
