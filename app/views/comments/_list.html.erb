@@ -11,7 +11,7 @@
       <% else %>
         <ul class="stripped">
         <% comments.each do |comment| %>
-          <%= render 'comments/item', comment: comment %>
+          <%= render 'comments/item', commentable: commentable, comment: comment %>
         <% end %>
         </ul>
       <% end %>

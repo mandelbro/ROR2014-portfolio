@@ -2,7 +2,7 @@ user_test:
   content: User test comment
   approved: true
   commentable: love_git
-  commentable_type: post
+  commentable_type: Post
   user: user
   approved: true
   user_ip: 127.0.0.1
@@ -14,7 +14,7 @@ user_unapproved:
   content: Unapproved user test comment
   approved: true
   commentable: love_git
-  commentable_type: post
+  commentable_type: Post
   user: user
   approved: false
   user_ip: 127.0.0.1
@@ -26,43 +26,7 @@ author_unapproved:
   content: Unapproved author test comment
   approved: true
   commentable: love_git
-  commentable_type: post
-  user: author
-  approved: false
-  user_ip: 127.0.0.1
-  user_agent: agent string
-  referrer: google.com
-  junk: false
-
-upco_user_test:
-  content: User test comment
-  approved: true
-  commentable: upco
-  commentable_type: project
-  user: user
-  approved: true
-  user_ip: 127.0.0.1
-  user_agent: agent string
-  referrer: google.com
-  junk: false
-
-upco_user_unapproved:
-  content: Unapproved user test comment
-  approved: true
-  commentable: upco
-  commentable_type: project
-  user: user
-  approved: false
-  user_ip: 127.0.0.1
-  user_agent: agent string
-  referrer: google.com
-  junk: false
-
-author_unapproved:
-  content: Unapproved author test comment
-  approved: true
-  commentable: upco
-  commentable_type: project
+  commentable_type: Post
   user: author
   approved: false
   user_ip: 127.0.0.1
@@ -74,7 +38,55 @@ test:
   content: Test comment
   approved: true
   commentable: love_git
-  commentable_type: post
+  commentable_type: Post
+  user: author
+  approved: true
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+upco_user_test:
+  content: User test comment
+  approved: true
+  commentable: upco
+  commentable_type: Project
+  user: user
+  approved: true
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+upco_user_unapproved:
+  content: Unapproved user test comment
+  approved: true
+  commentable: upco
+  commentable_type: Project
+  user: user
+  approved: false
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+upco_author_unapproved:
+  content: Unapproved author test comment
+  approved: true
+  commentable: upco
+  commentable_type: Project
+  user: author
+  approved: false
+  user_ip: 127.0.0.1
+  user_agent: agent string
+  referrer: google.com
+  junk: false
+
+upco_test:
+  content: Test comment
+  approved: true
+  commentable: upco
+  commentable_type: Project
   user: author
   approved: true
   user_ip: 127.0.0.1

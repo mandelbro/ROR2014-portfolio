@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
 
   # POST /posts/:post_id/comment
   def create
-    @comment = @commentable.comments.new(comment_params)
+    @comment = Comment.new(comment_params)
     authorize @comment
+    @comment.commentable_type = commentable_type
     @comment.junk = @comment.spam?
     @comment.user_agent = request.user_agent
     @commentable.comments << @comment
@@ -23,8 +24,9 @@ class CommentsController < ApplicationController
 
   # PATCH /posts/:post_id/comments/:id/approve
   def update
-    authorize @commentable.comment
+    authorize @comment
     action = params['comment']['action'] || 'updated'
+    if(@comment.spam?)
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to @commentable, notice: "Comment was successfully #{action}." }
@@ -33,6 +35,7 @@ class CommentsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @commentable.errors, status: :unprocessable_entity }
       end
+    end
     end
   end
 
@@ -57,7 +60,8 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_commentable
-      @comment = @commentable.comments.find(params[:id]) if params[:id]
+      # render text: params.to_yaml
+      @comment = Comment.find(params[:id]) if params[:id]
       @commentable = params[:commentable].classify.constantize.find(commentable_id)
     end
 
@@ -65,7 +69,11 @@ class CommentsController < ApplicationController
     end
 
     def commentable_id
-      params[(params[:commentable].singularize + "_id").to_sym]
+      params[(commentable_type + "_id").to_sym]
+    end
+
+    def commentable_type
+      params[:commentable].singularize
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
