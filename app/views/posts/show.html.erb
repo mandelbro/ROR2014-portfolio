@@ -23,7 +23,7 @@
       <%= markdown @post.body %>
       <div class="row">
         <div class="columns large-10">
-          <%= render 'comments/list', comments: @comments %>
+          <%= render 'comments/list', commentable: @post, comments: @comments %>
         </div>
       </div>
     </div>

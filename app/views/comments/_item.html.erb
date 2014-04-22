@@ -6,13 +6,35 @@
     <% unless comment.approved? %>
       <li class="comment-status">Status: Unapproved</li>
       <% if policy(comment).update? %>
-        <li><%= button_to 'Approve', post_comment_path(@post, comment, comment: { approved: true, action: 'approved' }), method: :patch, class: 'button small success' %></li>
-        <li><%= button_to 'Mark as spam', spam_post_comment_path(@post, comment), method: :patch, class: 'button small alert' %></li>
+        <li><%= button_to 'Approve', polymorphic_path([commentable, comment],
+                    commentable: commentable.class.to_s.underscore,
+                    comment: {
+                      approved: true,
+                      action: 'approved'
+                    },
+                  ),
+                  method: :patch,
+                  class: 'button small success'
+                %></li>
+        <li><%= button_to 'Mark as spam', polymorphic_path([commentable, comment],
+                    action: 'spam',
+                    commentable: commentable.class.to_s.underscore,
+                  ),
+                  method: :patch,
+                  class: 'button small alert'
+                %></li>
       <% end %>
     <% end %>
 
-    <% if policy(comment).destroy? %>sdfsdfs
-      <li><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, class: 'button small alert' %></li>
+    <% if policy(comment).destroy? %>
+      <li>
+        <%= button_to 'Delete',
+            polymorphic_path([commentable, comment], commentable: commentable.class.to_s.underscore),
+            method: :delete,
+            data: {
+              confirm: 'Are you sure you want to delete this comment?'
+            }, class: 'button small alert' %>
+      </li>
     <% end %>
 
   </ul>

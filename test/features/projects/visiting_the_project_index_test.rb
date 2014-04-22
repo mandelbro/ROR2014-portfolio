@@ -10,6 +10,44 @@ feature "An index page displaying all projects" do
     # Then the existing projects should be loaded
     page.find(".work-grid").text.must_include projects(:spt).company
   end
+
+  scenario "anonymous user visits project index" do
+
+    # When I visit /projects
+    visit projects_path
+
+    # Then the published projects should be loaded
+    page.text.must_include projects(:spt).company
+    # And the unpublished projects should be hidden
+    page.text.wont_include projects(:author_unpublished).company
+  end
+
+  scenario "author visits project index" do
+    # Given a logged in author
+    sign_in(:author)
+    # When I visit /projects
+    visit projects_path
+
+    # Then I should only see my own projects
+    page.text.must_include projects(:author_published).company
+    page.text.must_include projects(:author_unpublished).company
+    page.text.wont_include projects(:spt).company
+    page.text.wont_include projects(:rmv).company
+    page.text.wont_include projects(:upco).company
+  end
+
+  scenario "editor visits project index" do
+    # Given a logged in author
+    sign_in(:editor)
+    # When I visit /projects
+    visit projects_path
+
+    # Then I should all published and unpublished projects
+    page.text.must_include projects(:author_published).company
+    page.text.must_include projects(:author_unpublished).company
+    page.text.must_include projects(:spt).company
+    page.text.must_include projects(:upco).company
+  end
 end
 
 feature "Project Link in Navigation Menu" do

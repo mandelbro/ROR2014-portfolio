@@ -1,14 +1,16 @@
 Portfolio::Application.routes.draw do
 
-  devise_for :users,
-    path_names: { sign_in: 'login', sign_out: 'logout' },
-    controllers: {omniauth_callbacks: "omniauth_callbacks"}
-
-  resources :posts do
+  concern :commentable do
     resources :comments do
       patch 'spam', to: :spam, on: :member
     end
   end
+
+  devise_for :users,
+    path_names: { sign_in: 'login', sign_out: 'logout' },
+    controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  resources :posts, concerns: :commentable
 
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,7 +19,7 @@ Portfolio::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :projects
+  resources :projects, concerns: :commentable
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

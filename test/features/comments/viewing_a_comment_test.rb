@@ -1,9 +1,9 @@
 require "test_helper"
 
 
-feature "Visiting the Comment Index" do
+feature "Visiting the Comment Section" do
 
-  scenario "anonymous user visits comment index" do
+  scenario "anonymous user visits comment section" do
 
     # When I visit /comments
     visit post_path(posts(:love_git))
@@ -14,7 +14,7 @@ feature "Visiting the Comment Index" do
     page.find('.comment-list').text.wont_include comments(:user_unapproved).content
   end
 
-  scenario "user visits post he commented on index" do
+  scenario "user visits post he commented on section" do
     # Given a logged in user
     sign_in(:user)
     visit post_path(posts(:love_git))
@@ -28,7 +28,7 @@ feature "Visiting the Comment Index" do
 
   end
 
-  scenario "editor visits comment index" do
+  scenario "editor visits comment section" do
     # Given a logged in user
     sign_in(:editor)
     visit post_path(posts(:love_git))

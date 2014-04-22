@@ -95,6 +95,12 @@ form {
   .row-spacer {
     margin: 0 0 emCalc(40);
   }
+  textarea {
+    height: emCalc(100);
+    &.big-textarea {
+      height: emCalc(250);
+    }
+  }
 }
 
 
