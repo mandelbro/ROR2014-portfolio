@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def update
     authorize @comment
     action = params['comment']['action'] || 'updated'
-    if(@comment.spam?)
+
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to @commentable, notice: "Comment was successfully #{action}." }
@@ -35,7 +35,6 @@ class CommentsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @commentable.errors, status: :unprocessable_entity }
       end
-    end
     end
   end
 
