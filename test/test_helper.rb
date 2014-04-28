@@ -20,6 +20,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/rails'
 begin; require 'turn/autorun'; rescue LoadError; end
+require 'helpers/projects_helper'
 
 # To add Capybara feature tests add `gem 'minitest-rails-capybara'`
 # to the test group in the Gemfile and uncomment the following:

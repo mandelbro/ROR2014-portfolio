@@ -1,3 +1,44 @@
+
+author_published:
+  company: Author Published Test Project
+  body: |
+    ##From Brick and Mortar, to Click and Mortar
+    I helped a small company transition their business into the digital age.
+  technologies: Drupal 7, JavaScript
+  lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
+  published: true
+  user: author
+
+author_unpublished:
+  company: Author Unpublished Test Project
+  body: |
+    ##From Brick and Mortar, to Click and Mortar
+    I helped a small company transition their business into the digital age.
+  technologies: Drupal 7, JavaScript
+  lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
+  published: false
+  user: author
+
+editor_published:
+  company: Author Published Test Project
+  body: |
+    ##From Brick and Mortar, to Click and Mortar
+    I helped a small company transition their business into the digital age.
+  technologies: Drupal 7, JavaScript
+  lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
+  published: true
+  user: editor
+
+editor_unpublished:
+  company: Author Unpublished Test Project
+  body: |
+    ##From Brick and Mortar, to Click and Mortar
+    I helped a small company transition their business into the digital age.
+  technologies: Drupal 7, JavaScript
+  lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
+  published: false
+  user: editor
+
 teacherchannel:
   company: TeacherChannel
   body: |
@@ -5,6 +46,8 @@ teacherchannel:
     I helped a small company transition their business into the digital age.
   technologies: Drupal 7, JavaScript
   lead_image: http://assets.chrismontes.com/portfolio/images/spti-leadimg.jpg
+  published: true
+  user: root
 
 spt:
   company: Sony Pictures Television International
@@ -12,6 +55,8 @@ spt:
     ##Meeting the need for speed
     When the SPTI team at Smashing Ideas came to me for help improving the load times on their Nextgen platform, I proposed and implemented a number of changes that made a major impact.
   technologies: Drupal 7, jQuery & Zepto, CSS3, Lazy Resource Loading
+  published: true
+  user: root
 
 rmv:
   company: Rice McVaney
@@ -19,6 +64,8 @@ rmv:
     ##A modern website, for a post-modern brand
     I'm honestly not even sure what that means
   technologies: Drupal 7, jQuery & Zepto, CSS3
+  published: true
+  user: root
 
 upco:
   company: UP Global
@@ -28,3 +75,5 @@ upco:
   technologies: Rails, LocomotiveCMS, jQuery & Zepto, foundation, CSS3, liquid
   quote: In partnership with UP Global, we'll help support 500,000 new entrepreneurs and their startups around the world
   quote_attr: Barack Obama
+  published: true
+  user: root
