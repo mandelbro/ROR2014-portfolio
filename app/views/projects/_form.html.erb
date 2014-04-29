@@ -1,5 +1,5 @@
 <div id="project-form">
-  <%= form_for(@project) do |f| %>
+  <%= form_for(@project, remote: true) do |f| %>
     <div class="field row">
       <div class="columns large-4">
         <%= f.label :company, "Company" %>

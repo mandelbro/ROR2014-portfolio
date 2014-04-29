@@ -1,0 +1,22 @@
+<li style="background-image: <%= project.lead_image %>">
+  <div class="project" id="<%= dom_id(project) %>">
+    <h3><%= link_to project.company, project %></h3>
+    <p><%= project.technologies %></p>
+    <div class="nav">
+      <ul class="inline-list">
+      <li>
+      <%= link_to 'Show', project %>
+      </li>
+      <% if update? project %>
+        <li>
+        <%= link_to 'Edit', edit_project_path(project), class: 'button small' %>
+        </li>
+      <% end %>
+      <% if destroy? project %>
+        <li>
+        <%= button_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</li>

@@ -10,5 +10,4 @@ module ApplicationHelper
     raw markdown.render(text)
   end
 
-
 end
