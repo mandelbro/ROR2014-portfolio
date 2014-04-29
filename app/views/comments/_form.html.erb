@@ -37,4 +37,11 @@
     <% end %>
   </div>
 
+<% else %>
+
+  <div id="comment-login">
+    <h3>Login to comment</h3>
+    <%= link_to "Sign in with Twitter", omniauth_authorize_path(:user, :twitter) %>
+  </div>
+
 <% end %>

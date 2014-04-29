@@ -19,10 +19,8 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    authenticated?
+    author?
   end
-
-  alias_method :comment?, :create?
 
   def update?
     editor? || owner_of?
@@ -32,6 +30,10 @@ class PostPolicy < ApplicationPolicy
 
   def publish?
     editor?
+  end
+
+  def comment?
+    authenticated?
   end
 
   def permitted_attributes
@@ -50,6 +52,10 @@ class PostPolicy < ApplicationPolicy
 
     def editor?
       authenticated? && user.editor?
+    end
+
+    def author?
+      authenticated? && user.author?
     end
 
     def owner_of?
