@@ -1,4 +1,4 @@
-<li style="background-image: <%= project.lead_image %>">
+<li id="project-<%= dom_id(project) %>" style="background-image: <%= project.lead_image %>">
   <div class="project" id="<%= dom_id(project) %>">
     <h3><%= link_to project.company, project %></h3>
     <p><%= project.technologies %></p>
@@ -9,12 +9,12 @@
       </li>
       <% if update? project %>
         <li>
-        <%= link_to 'Edit', edit_project_path(project), class: 'button small' %>
+        <%= link_to 'Edit', edit_project_path(project), remote: true, class: 'button small' %>
         </li>
       <% end %>
       <% if destroy? project %>
         <li>
-        <%= button_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
+        <%= button_to 'Delete', project, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
         </li>
       <% end %>
     </div>

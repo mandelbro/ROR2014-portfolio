@@ -8,9 +8,10 @@
 <hr class="section-spacer">
 
 <% if create? %>
-<div class="row">
-  <div class="columns">
-    <%= link_to 'New Project', new_project_path, remote: true, id: :new_link, class: 'button medium' %>
+  <div class="row">
+    <div class="columns">
+      <%= link_to 'New Project', new_project_path, remote: true, id: :new_link, class: 'button medium' %>
+    </div>
   </div>
-</div>
+  <div id="editor-modal" class="reveal-modal" data-reveal></div>
 <% end %>

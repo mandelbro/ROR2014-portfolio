@@ -1,11 +1,11 @@
 class ProjectsController < ApplicationController
   before_filter :set_project, :only => [:show, :edit, :update, :destroy]
+  before_filter :set_projects, :only => [:index, :update, :create, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   after_action :verify_authorized, except: :index
   after_action :verify_policy_scoped, only: :index
 
   def index
-    @projects = policy_scope(Project)
   end
 
   def show
@@ -47,9 +47,11 @@ class ProjectsController < ApplicationController
       if @project.update(project_params)
         format.html { redirect_to @project, notice: "Project \"#{@project.company}\" was successfully updated." }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.js { render text: @project.errors.full_messages.join, status: :unprocessable_entity }
       end
     end
   end
@@ -60,6 +62,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully deleted.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
@@ -67,6 +70,10 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def set_projects
+    @projects = policy_scope(Project)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
