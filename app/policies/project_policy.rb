@@ -18,8 +18,6 @@ class ProjectPolicy < ApplicationPolicy
     record.published? || (editor? || owner_of?)
   end
 
-  alias_method :comment?, :show?
-
   def create?
     editor? || author?
   end
@@ -32,6 +30,10 @@ class ProjectPolicy < ApplicationPolicy
 
   def publish?
     editor?
+  end
+
+  def comment?
+    authenticated?
   end
 
   def permitted_attributes

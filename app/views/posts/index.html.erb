@@ -4,11 +4,7 @@
     <h1>Code Snippets</h1>
 
     <div class="post-list">
-      <% @posts.each do |post| %>
-      <article class="post-item" id="<%= dom_id(post) %>">
-        <h3><%= link_to post.title, post %></h3>
-      </article>
-      <% end %>
+      <%= render @posts %>
     </div>
 
     <hr class="section-spacer">

@@ -18,11 +18,14 @@
 //= require fastclick
 //= require placeholder
 //= require_tree .
-// run jQuery in noConflict mode
-jQuery.noConflict();
 // only use Zepto if it's supported
-Zepto = '__proto__' in {} ? Zepto : undefined;
+window.Zepto = '__proto__' in {} ? window.Zepto : undefined;
 // Initialize Foundation
 (function($){
   $(function(){ $(document).foundation(); });
 })(jQuery);
+
+$(document).ajaxError(function (e, xhr, settings, exception) {
+  console.log(e);
+  console.log(exception);
+});

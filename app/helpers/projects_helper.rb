@@ -16,12 +16,12 @@ module ProjectsHelper
     policy(project).update?
   end
 
-  def comment? project
-    policy(project).comment?
-  end
-
   def publish? project
     policy(project).publish?
+  end
+
+  def comment? project
+    policy(project).comment?
   end
 
 end
