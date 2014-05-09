@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require zepto
 //= require foundation
-//= require turbolinks
 //= require fastclick
 //= require placeholder
 //= require_tree .
