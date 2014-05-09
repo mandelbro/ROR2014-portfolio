@@ -2,6 +2,6 @@
 ;(function ($, window, undefined) {
   "use strict";
 
-  $('.work-grid #project-<%= dom_id(@project) %>').remove();
+  $('.work-grid #<%= dom_id(@project) %>').remove();
 
 })( (window.Zepto || window.jQuery), this );
