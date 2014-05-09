@@ -38,7 +38,7 @@ class ProjectPolicy < ApplicationPolicy
 
   def permitted_attributes
     if create?
-      [:company, :body, :technologies, :lead_image, :other_images, :quote, :quote_attr, :published]
+      [:company, :body, :technologies, :lead_image, :remote_lead_image_url, :other_images, :quote, :quote_attr, :published]
     end
   end
 

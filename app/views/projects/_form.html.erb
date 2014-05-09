@@ -1,5 +1,5 @@
 <div id="project-form">
-  <%= form_for(@project, remote: true) do |f| %>
+  <%= form_for @project, html: { multipart: true } do |f| %>
     <div class="field row">
       <div class="columns large-4">
         <%= f.label :company, "Company" %>
@@ -29,7 +29,13 @@
         <%= f.label :lead_image, "Lead Image" %>
       </div>
       <div class="columns large-8">
-        <%= f.text_field :lead_image %>
+        <%= f.file_field :lead_image %>
+        <div class="columns large-4">
+          <%= f.label :remote_lead_image_url, "Or add a remote url" %>
+        </div>
+        <div class="columns large-8">
+          <%= f.text_field :remote_lead_image_url %>
+        </div>
       </div>
     </div>
     <div class="field row">

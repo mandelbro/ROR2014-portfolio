@@ -1,4 +1,4 @@
-<li id="project-<%= dom_id(project) %>" style="background-image: <%= project.lead_image %>">
+<li id="<%= dom_id(project) %>" class="project" style="background-image: url(<%= project.lead_image_url.to_s %>);">
   <div class="project" id="<%= dom_id(project) %>">
     <h3><%= link_to project.company, project %></h3>
     <p><%= project.technologies %></p>

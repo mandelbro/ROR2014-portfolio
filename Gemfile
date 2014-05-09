@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'jquery-rails' # Use jquery and Zepto as the JavaScript library
 
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 
 gem 'zurb-foundation' # Adds foundation
@@ -28,8 +27,11 @@ gem 'omniauth-twitter' # Adds twitter oauth login
 gem 'figaro' # Manages environment config variables like API keys
 gem 'rakismet' # Adds Akismet integration
 
-gem "pundit" # Adds policy-based authorization support
+gem 'pundit' # Adds policy-based authorization support
 gem 'coveralls', require: false # Coveralls gem for test coverage
+
+gem 'carrierwave'
+gem 'rmagick'
 
 group :test do
 
