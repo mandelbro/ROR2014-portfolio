@@ -24,7 +24,7 @@ gem "minitest-rails" # Adds mini-test framework
 gem 'devise' # Adds Devise user authentication
 gem 'omniauth' # Adds base omniauth
 gem 'omniauth-twitter' # Adds twitter oauth login
-gem 'figaro', github: 'laserlemon/figaro'
+gem 'figaro', '~> 1.0.0.rc1'
 gem 'rakismet' # Adds Akismet integration
 
 gem 'pundit' # Adds policy-based authorization support
