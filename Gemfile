@@ -24,14 +24,15 @@ gem "minitest-rails" # Adds mini-test framework
 gem 'devise' # Adds Devise user authentication
 gem 'omniauth' # Adds base omniauth
 gem 'omniauth-twitter' # Adds twitter oauth login
-gem 'figaro' # Manages environment config variables like API keys
+gem 'figaro', github: 'laserlemon/figaro'
 gem 'rakismet' # Adds Akismet integration
 
 gem 'pundit' # Adds policy-based authorization support
 gem 'coveralls', require: false # Coveralls gem for test coverage
 
-gem 'carrierwave'
-gem 'rmagick'
+gem 'carrierwave' # Handles file uploads
+gem 'rmagick' # Imagemagick gem
+gem "fog" # Handles Amazon S3 uploads
 
 group :test do
 
