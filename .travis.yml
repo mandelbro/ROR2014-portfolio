@@ -11,11 +11,15 @@ deploy:
     branch: master
     rvm: 2.0.0
   run:
-    - "bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment"
-    - "rake db:migrate"
-    - restart
+  - bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin
+    -j4 --deployment
+  - rake db:migrate
+  - restart
 before_script:
-  - psql -c 'create database portfolio_test' -U postgres
-  - "bundle exec rake db:migrate"
+- psql -c 'create database portfolio_test' -U postgres
+- bundle exec rake db:migrate
 env:
+  matrix:
   - DB=postgresql
+  global:
+    secure: K4ESBXbpurqPuRBjVP7fYy5G2PwcuWGB0VRB+gp8ey59J/6yfiP5JDKDb/+gNTx4GY2+PKNc6Ol2zT7JykaWl3UP5noQHMZmAh1faM3FGHAGXyrxFBlgI+95/UUkjNivzGARBuPIz/3/W1IDy0UKzd24Sl2E1LQkoaFvio5MfHU=
