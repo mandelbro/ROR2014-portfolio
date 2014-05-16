@@ -1,5 +1,7 @@
 Portfolio::Application.routes.draw do
 
+  resources :messages
+
   concern :commentable do
     resources :comments do
       patch 'spam', to: :spam, on: :member

@@ -32,7 +32,9 @@ gem 'coveralls', require: false # Coveralls gem for test coverage
 
 gem 'carrierwave' # Handles file uploads
 gem 'rmagick' # Imagemagick gem
-gem "fog" # Handles Amazon S3 uploads
+gem 'fog' # Handles Amazon S3 uploads
+gem 'sidekiq' # Handles background queue
+gem 'whenever', :require => false # CRON JOBS
 
 group :test do
 
