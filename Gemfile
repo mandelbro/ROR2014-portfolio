@@ -35,6 +35,7 @@ gem 'rmagick' # Imagemagick gem
 gem 'fog' # Handles Amazon S3 uploads
 gem 'sidekiq' # Handles background queue
 gem 'whenever', :require => false # CRON JOBS
+gem 'postmark-mitt' # Enables inbound emails from Postmark
 
 group :test do
 

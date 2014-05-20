@@ -7,6 +7,13 @@ Portfolio::Application.routes.draw do
       new: ''
     }
 
+  namespace :api do
+    namespace :v1 do
+      resources :posts, :only => [ :create ]
+    end
+  end
+
+
   concern :commentable do
     resources :comments do
       patch 'spam', to: :spam, on: :member
