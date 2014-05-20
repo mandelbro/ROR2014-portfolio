@@ -1,6 +1,11 @@
 Portfolio::Application.routes.draw do
 
-  resources :messages
+  resources :messages,
+    only: [:new, :create],
+    path: 'get-in-touch',
+    path_names: {
+      new: ''
+    }
 
   concern :commentable do
     resources :comments do

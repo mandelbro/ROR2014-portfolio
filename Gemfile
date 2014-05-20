@@ -46,6 +46,7 @@ group :development do
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
+  gem 'letter_opener' # Send emails in developer mode
 end
 
 group :doc do
@@ -55,6 +56,8 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
+
+  gem 'postmark-rails', '~> 0.7.0' # Sends email through postmark
 end
 
 ruby "2.0.0"
