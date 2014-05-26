@@ -49,3 +49,13 @@ def sign_in(role = :editor)
   fill_in "Password", with: "password"
   page.find("form").click_on "Sign in"
 end
+
+def new_mail( charset="UTF-8" )
+  mail = Mail.new
+  mail.mime_version = "1.0"
+  if charset
+    mail.content_type ["text", "html", { "charset" => charset }]
+  end
+  mail.body =
+  mail
+end

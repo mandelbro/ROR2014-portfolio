@@ -32,7 +32,10 @@ gem 'coveralls', require: false # Coveralls gem for test coverage
 
 gem 'carrierwave' # Handles file uploads
 gem 'rmagick' # Imagemagick gem
-gem "fog" # Handles Amazon S3 uploads
+gem 'fog' # Handles Amazon S3 uploads
+gem 'sidekiq' # Handles background queue
+gem 'whenever', :require => false # CRON JOBS
+gem 'postmark-mitt' # Enables inbound emails from Postmark
 
 group :test do
 
@@ -44,6 +47,7 @@ group :development do
   gem 'capistrano',  '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
+  gem 'letter_opener' # Send emails in developer mode
 end
 
 group :doc do
@@ -53,6 +57,8 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
+
+  gem 'postmark-rails', '~> 0.7.0' # Sends email through postmark
 end
 
 ruby "2.0.0"

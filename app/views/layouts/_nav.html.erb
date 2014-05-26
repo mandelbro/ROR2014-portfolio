@@ -4,7 +4,7 @@
   <div id="logo" class="left">Chris Montes</div>
   <nav class="top-bar right" data-topbar>
 
-    <section class="top-bar-section">
+    <nav class="top-bar-section">
       <!-- Right Nav Section -->
       <ul>
         <li><a href="/">Home</a></li>
@@ -12,6 +12,8 @@
         <li><%= link_to "Projects", projects_path %></li>
         <li><i class="icon_divider  fi-asterisk size-12"></i></li>
         <li><%= link_to "Posts", posts_path %></li>
+        <li><i class="icon_divider  fi-asterisk size-12"></i></li>
+        <li><%= link_to "Get in touch", new_message_path %></li>
         <% unless current_user.nil? %>
           <li><i class="icon_divider  fi-asterisk size-12"></i></li>
           <li>
@@ -19,6 +21,6 @@
           </li>
         <% end %>
       </ul>
-    </section><!-- /.top-bar-section -->
+    </nav><!-- /.top-bar-section -->
   </nav> <!-- /.top-bar -->
 </header><!-- /#header -->

@@ -1,5 +1,19 @@
 Portfolio::Application.routes.draw do
 
+  resources :messages,
+    only: [:new, :create],
+    path: 'get-in-touch',
+    path_names: {
+      new: ''
+    }
+
+  namespace :api do
+    namespace :v1 do
+      resources :posts, :only => [ :create ]
+    end
+  end
+
+
   concern :commentable do
     resources :comments do
       patch 'spam', to: :spam, on: :member
