@@ -8,13 +8,14 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     authorize @comment
     @comment.commentable_type = commentable_type
-    @comment.junk = @comment.spam?
     @comment.user_agent = request.user_agent
     @commentable.comments << @comment
     current_user.comments << @comment
 
     respond_to do |format|
       if @comment.save
+        # Run the comment through the akismet server
+        AkismetWorker.perform_async(@comment.id)
         format.html { redirect_to @commentable, notice: 'Comment was successfully created.' }
       else
         format.html { render action: 'new' }
